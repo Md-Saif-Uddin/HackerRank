@@ -1,0 +1,16 @@
+###  https://www.hackerrank.com/challenges/nested-list/problem
+
+
+if __name__ == '__main__':
+    students = {}
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        if score not in students:
+            students[score] = [name]
+        else:
+            students[score].append(name)
+            
+    sorted_students = sorted(students.items())[1]
+    for student in sorted(sorted_students[1]):
+        print(student)
