@@ -1,0 +1,26 @@
+##    https://www.hackerrank.com/challenges/python-lists/problem?isFullScreen=true
+
+
+
+if __name__ == '__main__':
+    N = int(input())
+    li=[]
+    
+    for _ in range(N):
+        cmd, *extra=str(input()).split(" ")
+        if cmd=="insert":
+            li.insert(int(extra[0]),int(extra[1]))
+        elif cmd=="print":
+            print(li)
+        elif cmd=="remove":
+            li.remove(int(extra[0]))
+        elif cmd=="append":
+            li.append(int(extra[0]))
+        elif cmd=="sort":
+            li.sort()
+        elif cmd=="pop":
+            li.pop()
+        elif cmd=="reverse":
+            li.reverse()
+        else:
+            print("Invalid Input")
