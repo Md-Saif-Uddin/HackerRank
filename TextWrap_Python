@@ -1,0 +1,20 @@
+##    https://www.hackerrank.com/challenges/text-wrap/problem?isFullScreen=true
+
+
+import textwrap
+
+def wrap(string, max_width):
+    result=''
+    prev=0
+    for i in range(0,len(string),max_width):
+        prev=i
+        if(len(string)-i-1>max_width):
+            result=result + string[prev:prev+max_width] + '\n'
+    if(prev<len(string)):
+        result=result + string[prev:] 
+    return result
+
+if __name__ == '__main__':
+    string, max_width = input(), int(input())
+    result = wrap(string, max_width)
+    print(result)
