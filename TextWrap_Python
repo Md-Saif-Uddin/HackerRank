@@ -3,16 +3,27 @@
 
 import textwrap
 
+#without textWrap method 
+# def wrap(string, max_width):
+#     result=''
+#     prev=0
+#     for i in range(0,len(string),max_width):
+#         prev=i
+#         if(len(string)-i-1>max_width):
+#             result=result + string[prev:prev+max_width] + '\n'
+#     if(prev<len(string)):
+#         result=result + string[prev:] 
+#     return result
+
+#with 
 def wrap(string, max_width):
-    result=''
-    prev=0
-    for i in range(0,len(string),max_width):
-        prev=i
-        if(len(string)-i-1>max_width):
-            result=result + string[prev:prev+max_width] + '\n'
-    if(prev<len(string)):
-        result=result + string[prev:] 
-    return result
+    newList = textwrap.wrap(string, max_width)
+    i = 0
+    result = ""
+    while i < len(newList):
+        result += newList[i] + "\n"
+        i += 1
+    return (result[:-1])
 
 if __name__ == '__main__':
     string, max_width = input(), int(input())
